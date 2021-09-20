@@ -5,6 +5,12 @@ import {router} from "./routes";
 
 const app  = express();
 
-app.use(express.json)
+app.use(express.json())
 app.use(router);
-app.listen(3000, () => console.log("Server is running nlw"))
+
+app.get("/test", (request, response) => {
+  return response.send("Olá");
+});
+
+
+app.listen(3000, () => console.log("Server is running"))
